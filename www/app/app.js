@@ -19,12 +19,48 @@ export default angular
         , 'homeModule'
         , 'preferenceModule'
         , 'mainModule'])
-    .factory('redirector', ['$state', ($state)=>{
+    .factory('redirector', ['$rootScope', '$state', '$cordovaPushV5', ($rootScope, $state, $cordovaPushV5)=>{
 		/*this is just sample redirection for mobile/phonegap. used angular injector to get access of this function from inside js/index.js (phonegap push notification)
 		 might have to use ngCordova for this so that i can just add it as dependency in app module*/
         return {
-            redirect: function(){
-                $state.go('main.orderList');
+            init: function(){
+                console.log('initialize');
+                ($rootScope) ? console.log('$rootScope ready') : console.log('$rootScope you\'re doomed!');
+                ($state) ? console.log('$state ready') : console.log('$state you\'re doomed!');
+                ($cordovaPushV5) ? console.log('cordova plugin ready') : console.log('cordovaPushV5 you\'re doomed!');  
+                
+                
+                /*// initialize
+                $cordovaPushV5.initialize(options).then(function() {
+                    console.log('cordova init');
+                    // start listening for new notifications
+                    $cordovaPushV5.onNotification();
+                    // start listening for errors
+                    $cordovaPushV5.onError();
+                    
+                    // register to get registrationId
+                    $cordovaPushV5.register().then(function(registrationId) {
+                    // save `registrationId` somewhere;
+                        console.log('registrationId: ' + registrationId);
+                    })
+                });
+
+                console.log('continue after init');
+                $rootScope.$on('$cordovaPushV5:notificationReceived', function(event, data){
+                    console.log('notification received: ' + data.title);
+                    // data.message,
+                    // data.title,
+                    // data.count,
+                    // data.sound,
+                    // data.image,
+                    // data.additionalData
+                });
+
+                // triggered every time error occurs
+                $rootScope.$on('$cordovaPushV5:errorOcurred', function(event, e){
+                    console.log('notification received: ' + e.message);
+                    // e.message
+                });*/
             }
         }
     }])
@@ -49,4 +85,7 @@ export default angular
                 url: '/main',
                 template: '<main-component></main-component>'
             });
+    }])
+    .run(['redirector', (redirector) => {
+        redirector.init();
     }]);

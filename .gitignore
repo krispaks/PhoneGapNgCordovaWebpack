@@ -3,3 +3,4 @@ plugins/*
 !plugins/*.json
 platforms/*
 !platforms/*.json
+www/dist/app.bundle.js
