@@ -1,0 +1,39 @@
+<md-content>
+    <div layout="column" flex-xs layout-align="center center">
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>-- All Account / Community Name --</label>
+            <md-select ng-model="">
+                <md-option value="1">
+                    Test 1
+                </md-option>
+                <md-option value="2">
+                    Test 2
+                </md-option>
+            </md-select>
+        </md-input-container>
+    </div>
+</md-content>
+<md-content>
+    <md-list flex>
+        <md-list-item class="md-3-line" ng-repeat="item in $ctrl.data" ng-click="null">
+            <md-card md-theme="default" md-theme-watch flex>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">{{item.company}}</span>
+                        <span class="md-subhead">{{item.project}}</span>
+                        <span class="md-subhead">{{item.block}}</span>
+                        <span class="md-subhead">{{item.job}}</span>
+                    </md-card-title-text>
+                    <md-card-title-media>
+                        <span class="md-subhead">{{item.dateStart}}</span>
+                    </md-card-title-media>
+                </md-card-title>
+                <md-card-actions layout="row" layout-sm="column" layout-align="end end">
+                    <md-button class="md-icon-button md-primary" aria-label="Settings">
+                        <md-icon md-svg-icon="img/icons/android.svg"></md-icon>
+                    </md-button>
+                </md-card-actions>
+            </md-card>
+        </md-list-item>
+    </md-list>
+</md-content>
