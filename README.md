@@ -1,4 +1,4 @@
-Testing out integrating the following technology
+Testing out how to use the following technologies:
 
 * Phonegap
 * AngularJS
