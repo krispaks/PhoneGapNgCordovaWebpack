@@ -1,3 +1,5 @@
-*node_modules
-*plugins
-*platforms
+node_modules
+plugins/*
+!plugins/*.json
+platforms/*
+!platforms/*.json
