@@ -42,6 +42,7 @@
   },
   "scripts": {
     "serve": "lite-server",
-    "dev": "gulp watch | lite-server"
+    "dev": "gulp watch | lite-server",
+    "android": "gulp webpack | rimraf platforms\\android | phonegap build android"
   }
 }

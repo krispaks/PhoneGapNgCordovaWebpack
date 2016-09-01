@@ -24,43 +24,52 @@ export default angular
 		 might have to use ngCordova for this so that i can just add it as dependency in app module*/
         return {
             init: function(){
-                console.log('initialize');
-                ($rootScope) ? console.log('$rootScope ready') : console.log('$rootScope you\'re doomed!');
-                ($state) ? console.log('$state ready') : console.log('$state you\'re doomed!');
-                ($cordovaPushV5) ? console.log('cordova plugin ready') : console.log('cordovaPushV5 you\'re doomed!');  
-                
-                
-                /*// initialize
-                $cordovaPushV5.initialize(options).then(function() {
-                    console.log('cordova init');
-                    // start listening for new notifications
-                    $cordovaPushV5.onNotification();
-                    // start listening for errors
-                    $cordovaPushV5.onError();
+
+                document.addEventListener('deviceready', ()=>{
+                    console.log('initialize');
+                    ($rootScope) ? console.log('$rootScope ready') : console.log('$rootScope you\'re doomed!');
+                    ($state) ? console.log('$state ready') : console.log('$state you\'re doomed!');
+                    ($cordovaPushV5) ? console.log('cordova plugin ready') : console.log('cordovaPushV5 you\'re doomed!');  
                     
-                    // register to get registrationId
-                    $cordovaPushV5.register().then(function(registrationId) {
-                    // save `registrationId` somewhere;
-                        console.log('registrationId: ' + registrationId);
-                    })
-                });
+                    var options = {
+                        android: {
+                            senderID: "XXXXXXX"
+                        },
+                        ios: {
+                            alert: "true",
+                            badge: "true",
+                            sound: "true"
+                        },
+                        windows: {}
+                    };
+                    
+                    // initialize
+                    $cordovaPushV5.initialize(options).then(function() {
+                        console.log('cordova init');
+                        // start listening for new notifications
+                        $cordovaPushV5.onNotification();
+                        // start listening for errors
+                        $cordovaPushV5.onError();
+                        
+                        // register to get registrationId
+                        $cordovaPushV5.register().then(function(registrationId) {
+                        // save `registrationId` somewhere;
+                            console.log('registrationId: ' + registrationId);
+                        })
+                    });
 
-                console.log('continue after init');
-                $rootScope.$on('$cordovaPushV5:notificationReceived', function(event, data){
-                    console.log('notification received: ' + data.title);
-                    // data.message,
-                    // data.title,
-                    // data.count,
-                    // data.sound,
-                    // data.image,
-                    // data.additionalData
-                });
+                    console.log('continue after init');
+                    $rootScope.$on('$cordovaPushV5:notificationReceived', function(event, data){
+                        console.log('notification received');
+                        $state.go('main.orderList');
+                    });
 
-                // triggered every time error occurs
-                $rootScope.$on('$cordovaPushV5:errorOcurred', function(event, e){
-                    console.log('notification received: ' + e.message);
-                    // e.message
-                });*/
+                    // triggered every time error occurs
+                    $rootScope.$on('$cordovaPushV5:errorOcurred', function(event, e){
+                        console.log('notification received: ' + e.message);
+                        // e.message
+                    });
+                });
             }
         }
     }])
