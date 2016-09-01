@@ -20,4 +20,4 @@ Steps:
   
 3.) open PhoneGap Developer mobile app and connect to the ip address
 
-4>) for push notification testing follow instructions in this link (http://docs.phonegap.com/develop/push-notifications/)
+4.) for push notification testing follow instructions in this link (http://docs.phonegap.com/develop/push-notifications/)
