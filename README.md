@@ -1,5 +1,6 @@
 Testing out how to use the following technologies:
 
+* ES2015
 * Phonegap
 * AngularJS
 * Angular Material
