@@ -24,7 +24,7 @@ export default angular
 		 might have to use ngCordova for this so that i can just add it as dependency in app module*/
         return {
             init: function(){
-
+                // NOTE: do i really need to put this inside deviceready?
                 document.addEventListener('deviceready', ()=>{
                     console.log('initialize');
                     ($rootScope) ? console.log('$rootScope ready') : console.log('$rootScope you\'re doomed!');
