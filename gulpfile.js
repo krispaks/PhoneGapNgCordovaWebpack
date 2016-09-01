@@ -6,7 +6,6 @@ const watch = require('gulp-watch');
 
 gulp.task('webpack', ['clean'], (cb) => {
     const config = require('./webpack.dist.config');
-    config.entry.app = ['babel-polyfill', './www/app/app.js'];
     webpack(config, () => {
         cb();
     });
