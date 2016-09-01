@@ -15,8 +15,7 @@ Steps:
 
   * $ npm install -g phonegap (this will instsall phonegap cli)
   * $ npm install (this will install all node packages)
-  * gulp webpack (this will bundle all resources)
-  * phonegap serve (will open a server on which the PhoneGap Developer mobile app can connect to)
+  * $ npm run serve (this will run webpack and also run phonegap serve)
   
 3.) open PhoneGap Developer mobile app and connect to the ip address
 
