@@ -41,8 +41,8 @@
     "webpack": "^1.13.2"
   },
   "scripts": {
-    "serve": "lite-server",
-    "dev": "gulp watch | lite-server",
-    "android": "gulp webpack | rimraf platforms\\android | phonegap build android"
+    "serve": "gulp webpack && phonegap serve",
+    "dev": "gulp watch && lite-server",
+    "android": "gulp webpack && rimraf platforms\\android && phonegap build android"
   }
 }

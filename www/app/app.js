@@ -66,7 +66,7 @@ export default angular
 
                     // triggered every time error occurs
                     $rootScope.$on('$cordovaPushV5:errorOcurred', function(event, e){
-                        console.log('notification received: ' + e.message);
+                        console.log('notification error: ' + e.message);
                         // e.message
                     });
                 });
