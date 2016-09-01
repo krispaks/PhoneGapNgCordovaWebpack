@@ -20,16 +20,12 @@ export default angular
         , 'preferenceModule'
         , 'mainModule'])
     .factory('redirector', ['$rootScope', '$state', '$cordovaPushV5', ($rootScope, $state, $cordovaPushV5)=>{
-		/*this is just sample redirection for mobile/phonegap. used angular injector to get access of this function from inside js/index.js (phonegap push notification)
-		 might have to use ngCordova for this so that i can just add it as dependency in app module*/
         return {
             init: function(){
                 // NOTE: do i really need to put this inside deviceready?
+                // yes! tested this out already. need to verify why.
                 document.addEventListener('deviceready', ()=>{
                     console.log('initialize');
-                    ($rootScope) ? console.log('$rootScope ready') : console.log('$rootScope you\'re doomed!');
-                    ($state) ? console.log('$state ready') : console.log('$state you\'re doomed!');
-                    ($cordovaPushV5) ? console.log('cordova plugin ready') : console.log('cordovaPushV5 you\'re doomed!');  
                     
                     var options = {
                         android: {
@@ -67,7 +63,6 @@ export default angular
                     // triggered every time error occurs
                     $rootScope.$on('$cordovaPushV5:errorOcurred', function(event, e){
                         console.log('notification error: ' + e.message);
-                        // e.message
                     });
                 });
             }
