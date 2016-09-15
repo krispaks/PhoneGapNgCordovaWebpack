@@ -4,3 +4,4 @@ plugins/*
 platforms/*
 !platforms/*.json
 www/dist/app.bundle.js
+*.DS_Store
