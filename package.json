@@ -1,23 +1,9 @@
 {
-  "name": "phonegap-template-hello-world",
+  "name": "phonegap-ng-cordova-webpack-es6-pushnotification",
   "version": "4.0.2",
-  "description": "> A Hello World template built with PhoneGap",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/phonegap/phonegap-app-hello-world.git"
-  },
-  "author": "PhoneGap Team",
+  "description": "test app",
+  "author": "Khris Paca",
   "license": "Apache-2.0.0",
-  "keywords": [
-    "ecosystem:phonegap",
-    "ecosystem:cordova",
-    "cordova:template",
-    "phonegap:template"
-  ],
-  "bugs": {
-    "url": "https://github.com/phonegap/phonegap-app-hello-world/issues"
-  },
-  "homepage": "https://github.com/phonegap/phonegap-app-hello-world",
   "dependencies": {
     "angular": "^1.5.8",
     "angular-animate": "^1.5.8",

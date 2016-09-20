@@ -42,6 +42,7 @@ export default angular
             });
     }])
     .run(['$rootScope', '$state', '$cordovaPushV5', ($rootScope, $state, $cordovaPushV5) => {
+        console.log('************* inside run! *************');
         document.addEventListener('deviceready', ()=>{
             console.log('initialize');
             
@@ -68,7 +69,11 @@ export default angular
                 // register to get registrationId
                 $cordovaPushV5.register().then(function(registrationId) {
                 // save `registrationId` somewhere;
+                // Note: for APNS i believe this is the device token returned.
+                // for Backend Registration, we will save this device token in localStorage
+                // during login, it will be sent to the a Restful api that will generate a registrationId.
                     console.log('registrationId: ' + registrationId);
+                    
                 })
             });
 
