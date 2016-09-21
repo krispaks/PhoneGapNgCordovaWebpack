@@ -72,8 +72,8 @@ export default angular
                 // Note: for APNS i believe this is the device token returned.
                 // for Backend Registration, we will save this device token in localStorage
                 // during login, it will be sent to the a Restful api that will generate a registrationId.
+                // the backend generated registrationId i think is the one used to send to the device.
                     console.log('registrationId: ' + registrationId);
-                    
                 })
             });
 
