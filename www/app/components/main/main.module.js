@@ -40,6 +40,39 @@ let MainModule = angular.module('mainModule', [
                 url: '/calendar',
                 template: '<calendar-component></calendar-component>'
             })
+    }])
+    .run(['$rootScope', ($rootScope) => {
+        $rootScope.$on('$stateChangeStart', (event, toState, toParams, fromState, fromParams, options) => {
+            console.log('something changed');
+
+            switch(toState.name)
+            {
+                case 'main.orderList':
+                    $rootScope.currentState = "receivedOrders";
+                    $rootScope.$broadcast('navStateChange', {
+                        currentState: 'receivedOrders' // send whatever you want
+                    });
+                break;
+                case 'main.todo':
+                    $rootScope.currentState = "todoOrders";
+                    $rootScope.$broadcast('navStateChange', {
+                        currentState: 'todoOrders' // send whatever you want
+                    });
+                break;
+                case 'main.defects':
+                    $rootScope.currentState = "manageDefects";
+                    $rootScope.$broadcast('navStateChange', {
+                        currentState: 'manageDefects' // send whatever you want
+                    });
+                break;
+                case 'main.calendar':
+                    $rootScope.currentState = "dayCalendar";
+                    $rootScope.$broadcast('navStateChange', {
+                        currentState: 'dayCalendar' // send whatever you want
+                    });
+                break;
+            }
+        });
     }]);
     
     
