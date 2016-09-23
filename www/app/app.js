@@ -53,7 +53,8 @@ export default angular
                 ios: {
                     alert: "true",
                     badge: "true",
-                    sound: "true"
+                    sound: "true",
+                    clearBadge: "true"
                 },
                 windows: {}
             };
@@ -80,7 +81,15 @@ export default angular
             console.log('continue after init');
             $rootScope.$on('$cordovaPushV5:notificationReceived', function(event, data){
                 console.log('notification received');
-                $state.go('main.orderList');
+                if(data.additionalData.type === 1)
+                {
+                    $state.go('main.defects');
+                }
+                else
+                {
+                    $state.go('main.orderList');
+                }
+                
             });
 
             // triggered every time error occurs
