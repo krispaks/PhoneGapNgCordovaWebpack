@@ -5,7 +5,7 @@ export default{
         templateUrl: './app/components/nav/nav.component.html',
         controller: [NavController],
         bindings: {
-            setNav: '@'          
+            option: '<'          
         }
     }
 }

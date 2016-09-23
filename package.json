@@ -29,8 +29,8 @@
   "scripts": {
     "serve":"gulp webpack && lite-server",
     "phonegap": "gulp webpack && phonegap serve",
-    "dev": "gulp watch && lite-server",
-    "android": "gulp webpack && rimraf platforms\/android && phonegap build android",
+    "dev": "gulp webpack && lite-server && gulp watch",
+    "android": "gulp webpack && phonegap build android",
     "ios": "gulp webpack && phonegap build ios"
   }
 }

@@ -1,10 +1,18 @@
 class MainController{
     constructor($scope){
-        $scope.$root.$on('navStateChange',  (event, data) => {
-            console.log('navStateChanged: ' + data.currentState); // 'Data to send'
-            this.currentState = data.currentState;
+        var self = this;
+        self.option = {};
+
+        $scope.$root.$watch('currentState', (newValue, oldValue) => {
+            self.onDoSomething(newValue);
         });
-    }    
+    }
+
+    onDoSomething(data){
+        this.option = {
+            currentNav: data
+        };
+    };    
 }
 
 export default MainController;
