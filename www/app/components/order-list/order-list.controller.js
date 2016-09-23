@@ -2,31 +2,31 @@ class OrderListController{
     constructor(){
         this.data = [
             {
-                company: "Made in the Philippines Factory",
-                project: "p-cr001 - Cedar Ridge Estates Phase 1 (cr001)",
+                company: "1Builder 1.12 Company",
+                project: "Subdivision somewhere in Texas",
                 block: "Lot: 17/Block: 15",
                 address: "59540 NE Willow Avenue",
                 job: "Destroy the Foundation",
                 dateStart: "01/27/2017"
             },
             {
-                company: "Willy Wonka Chocolate Factory",
-                project: "p-cr001 - Cedar Ridge Estates Phase 1 (cr001)",
+                company: "2Builder 2.11 Company",
+                project: "Build A House Project",
                 block: "Lot: 17/Block: 15",
                 address: "59540 NE Willow Avenue",
                 job: "Fix the Sewage",
                 dateStart: "06/15/2015"
             },
             {
-                company: "Fernando Poe Housing Builder",
-                project: "p-cr001 - Cedar Ridge Estates Phase 1 (cr001)",
+                company: "3Builder 3.55 Company",
+                project: "Project Grey",
                 block: "Lot: 17/Block: 15",
                 address: "59540 NE Willow Avenue",
                 job: "Need to build the house",
                 dateStart: "09/11/2016"
             },
             {
-                company: "Quick Brown Fox, Jumps Over the Lazy Dog",
+                company: "4Builder 4.99 Company",
                 project: "Camp Toccoa Training",
                 block: "Lot: 17/Block: 15",
                 address: "59540 NE Willow Avenue",
