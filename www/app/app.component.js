@@ -1,5 +1,5 @@
 import AppController from './app.component.controller';
-export default{
+export default {
     name: 'appComponent',
     config: {
         templateUrl: './app/app.component.html',
