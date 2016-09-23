@@ -20,9 +20,6 @@ let MainModule = angular.module('mainModule', [
     , 'defectModule'
     , 'material.svgAssetsCache'])
     .component(MainComponent.name, MainComponent.config)
-    .controller('MainModuleController', ['$scope', ($scope) =>{
-        $scope.currentState = '';
-    }])
     .config(['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider) => {
         $urlRouterProvider.otherwise('/main');
 
@@ -52,27 +49,15 @@ let MainModule = angular.module('mainModule', [
             {
                 case 'main.orderList':
                     $rootScope.currentState = "receivedOrders";
-                    /*$rootScope.$broadcast('navStateChange', {
-                        currentState: 'receivedOrders' // send whatever you want
-                    });*/
                 break;
                 case 'main.todo':
                     $rootScope.currentState = "todoOrders";
-                    /*$rootScope.$broadcast('navStateChange', {
-                        currentState: 'todoOrders' // send whatever you want
-                    });*/
                 break;
                 case 'main.defects':
                     $rootScope.currentState = "manageDefects";
-                    /*$rootScope.$broadcast('navStateChange', {
-                        currentState: 'manageDefects' // send whatever you want
-                    });*/
                 break;
                 case 'main.calendar':
                     $rootScope.currentState = "dayCalendar";
-                    /*$rootScope.$broadcast('navStateChange', {
-                        currentState: 'dayCalendar' // send whatever you want
-                    });*/
                 break;
             }
         });
