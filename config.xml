@@ -108,6 +108,7 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <allow-intent href="qa:*" />
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>
