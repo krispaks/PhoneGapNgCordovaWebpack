@@ -21,8 +21,30 @@ export default angular
         , 'mainModule'])
     .component(AppComponent.name, AppComponent.config)
     .config(['$mdThemingProvider', ($mdThemingProvider)=>{
-        $mdThemingProvider.theme('default')
-            .primaryPalette('orange');
+        $mdThemingProvider.alwaysWatchTheme(true);
+        $mdThemingProvider.theme('installpro')
+            .primaryPalette('orange')
+            .accentPalette('orange')
+            .warnPalette('orange')
+            .backgroundPalette('orange');
+
+        $mdThemingProvider.theme('lennox')
+            .primaryPalette('green')
+            .accentPalette('green')
+            .warnPalette('green')
+            .backgroundPalette('green');
+
+        $mdThemingProvider.theme('carrier')
+            .primaryPalette('red')
+            .accentPalette('red')
+            .warnPalette('red')
+            .backgroundPalette('red');
+
+        $mdThemingProvider.theme('ge')
+            .primaryPalette('blue')
+            .accentPalette('blue')
+            .warnPalette('blue')
+            .backgroundPalette('blue');
     }])
     .config(['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider)=>{
         $urlRouterProvider.otherwise('/');
