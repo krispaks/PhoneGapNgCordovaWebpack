@@ -3,5 +3,6 @@ module.exports = {
     "server" : {
         "baseDir" : "./www"
     },
+    "files": ['./www/dist/app.bundle.js', './www/app/**/*.html'],
     "browser" : "chrome"
 }

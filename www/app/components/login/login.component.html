@@ -1,0 +1,62 @@
+<div layout="row">
+    <md-content>
+        <!-- Contact Support -->
+        <div layout="row" layout-align="center end">
+            <md-button class="md-primary">
+                <img src="../../../img/Contact_Support.png" ng-click="goToSupport($event)">
+            </md-button>
+        </div>
+
+        <!-- InstallPro Title -->
+        <img src="../../../img/IP_Logo_wo_Hyphen_Logo.png" alt="INSTALLPRO">
+        
+        
+        <!-- Main Login secion -->
+        <div class="hs-login-section">
+            <!-- Login Authentication Form -->
+            <form name="loginForm" class="form-horizontal" ng-submit="authenticate()" role="form">
+                <!-- Username -->
+                <input type="text" name="username"
+                ng-model="user.username" 
+                class="form-group form-control input-lg hs-login-input" 
+                placeholder="ENTER USER NAME" 
+                maxlength="15"
+                autocapitalize="off" autocorrect="off"
+                required>
+                <!-- Password -->
+                <input type="password" name="password"
+                ng-model="user.password" 
+                class="form-group form-control input-lg hs-login-input" 
+                maxlength="15"
+                placeholder="ENTER PASSWORD" 
+                required>
+                <!-- Sumbit -->
+                <button id="authenticateBtn" type="submit" class="form-group hs-login-btn-submit"
+                ng-disabled="loginForm.$invalid || login.isAuthenticating" ng-hide="login.isAuthenticating">SIGN IN</button>
+                <div ng-show="login.isAuthenticating" class="hs-login-authenticating">Signing in...</div>
+                <!-- Checkbox -->
+                <div class="form-group hs-login-rememberme">
+                <label for="loginRememberMe" class="hs-login-label">Remember Me:</label>
+                <input type="checkbox" id="loginRememberMe" class="hs-login-checkbox" ng-model="user.rememberMe">
+                <label for="loginRememberMe"></label>
+                </div>
+            </form>
+            <!-- Forgot Password -->
+            <div>
+                <label class="hs-login-label">Forgot Your Password?</label>
+                <button id="forgotPasswordBtn" class="hs-login-btn-small" ng-click="forgotPassword()">CLICK HERE</button>
+            </div>
+        </div>
+
+        <!-- Create an account -->
+        <div class="hs-login-section-account">
+        <label class="hs-login-label">Not a Member Yet?</label>
+        <button id="createProfileBtn" class="hs-login-btn-small" ng-click="goToProfileCreate()">CLICK HERE</button>
+        </div>
+
+        <label class="hs-login-version-label">Version {{login.version}}</label>
+        <!-- Footer Image -->
+        <img src="../../../img/HSLogo_Powered_By.png" alt="Powered By Hyphen" 
+        class="hs-login-footer">
+    </md-content>
+</div>
